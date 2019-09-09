@@ -20,6 +20,14 @@ def squared_norm(m):
     return dot(m, m)
 
 
+def skew(v):
+    assert isinstance(v, sympy.Matrix)
+    assert v.shape == (3,1), v.shape
+    return sympy.Matrix([[0, -v[2], v[1]],
+                         [v[2], 0, -v[0]],
+                         [-v[1], v[0], 0]])
+
+
 def Vector2(x, y):
     return sympy.Matrix([x, y])
 
